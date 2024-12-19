@@ -4,8 +4,8 @@ from app.forms import RegistrationForm, LoginForm, UpdateAccountForm
 from app.models import User
 from flask_login import login_user, current_user, logout_user, login_required
 
-@app.route("/")
-@app.route("/home")
+@app.route("/", methods=["GET", "POST"])
+@app.route("/home", methods=["GET", "POST"])
 @login_required
 def home():
     form = UpdateAccountForm()
